@@ -21,4 +21,8 @@ yarn-error.log
 /.nova
 /.vscode
 /.zed
-app/Http/Controllers/DatabaseController.php
+app/Http/Controllers/CreateTableController.php
+app/Http/Controllers/ShoppeController.php
+resources/
+
+
