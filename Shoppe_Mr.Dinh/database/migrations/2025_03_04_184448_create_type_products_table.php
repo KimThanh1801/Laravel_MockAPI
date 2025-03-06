@@ -7,16 +7,17 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration {
     public function up(): void
     {
-        Schema::create('icons', function (Blueprint $table) {
+        Schema::create('type_products', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('icon');
+            $table->text('description')->nullable();
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }
 
     public function down(): void
     {
-        Schema::dropIfExists('icons');
+        Schema::dropIfExists('type_products');
     }
 };

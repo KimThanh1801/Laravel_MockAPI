@@ -7,16 +7,20 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration {
     public function up(): void
     {
-        Schema::create('permissions', function (Blueprint $table) {
+        Schema::create('customers', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('guard_name');
+            $table->enum('gender', ['male', 'female', 'other']);
+            $table->string('email')->unique();
+            $table->string('address');
+            $table->string('phone_number');
+            $table->text('note')->nullable();
             $table->timestamps();
         });
     }
 
     public function down(): void
     {
-        Schema::dropIfExists('permissions');
+        Schema::dropIfExists('customers');
     }
 };

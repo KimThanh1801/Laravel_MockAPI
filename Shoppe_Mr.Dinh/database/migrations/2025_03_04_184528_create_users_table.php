@@ -7,18 +7,18 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration {
     public function up(): void
     {
-        Schema::create('comments', function (Blueprint $table) {
+        Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('username');
-            $table->text('comment');
-            $table->unsignedBigInteger('id_product');
+            $table->string('full_name');
+            $table->string('email')->unique();
+            $table->string('password');
+            $table->rememberToken();
             $table->timestamps();
-            $table->foreign('id_product')->references('id')->on('products')->onDelete('cascade');
         });
     }
 
     public function down(): void
     {
-        Schema::dropIfExists('comments');
+        Schema::dropIfExists('users');
     }
 };

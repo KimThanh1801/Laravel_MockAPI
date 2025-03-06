@@ -7,14 +7,16 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration {
     public function up(): void
     {
-        Schema::create('b_s', function (Blueprint $table) {
-            $table->id(); // Tự động tạo id (UNSIGNED INT)
-            $table->string('data'); // VARCHAR(255) NOT NULL
+        Schema::create('slide', function (Blueprint $table) {
+            $table->id();
+            $table->string('link')->nullable();
+            $table->string('image')->nullable();
+            $table->timestamps();
         });
     }
 
     public function down(): void
     {
-        Schema::dropIfExists('b_s');
+        Schema::dropIfExists('slide');
     }
 };

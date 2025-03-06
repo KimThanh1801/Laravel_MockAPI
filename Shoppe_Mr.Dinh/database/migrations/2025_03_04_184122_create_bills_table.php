@@ -9,11 +9,11 @@ return new class extends Migration {
     {
         Schema::create('bills', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('id_customer')->nullable();
-            $table->date('date_order')->nullable();
-            $table->float('total')->nullable()->comment('tổng tiền');
-            $table->string('payment', 200)->nullable()->comment('hình thức thanh toán');
-            $table->string('note', 500)->nullable();
+            $table->foreignId('id_customer')->constrained('customers')->onDelete('cascade');
+            $table->date('date_color');
+            $table->decimal('total', 10, 2);
+            $table->string('payment');
+            $table->text('note')->nullable();
             $table->timestamps();
         });
     }
