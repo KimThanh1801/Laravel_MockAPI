@@ -23,7 +23,7 @@ Route::get('/login',[ShoppeController::class,'login']);
 Route::fallback(function () {
     return response()->view('errors.404', [], 404);
 });
-Route::get('/laravel_db', [DatabaseController::class, 'createTables']);
+// Route::get('/laravel_db', [DatabaseController::class, 'createTables']);
 
 
 // // Route::get('/database', function(){

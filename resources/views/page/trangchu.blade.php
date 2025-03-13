@@ -1,394 +1,99 @@
-@extends('index') {{-- Chỉ dùng một layout chính --}}
+@extends('index')
 
-@section('content') {{-- Bắt đầu section content --}}
-<div class="fullwidthbanner-container">
-    <div class="fullwidthbanner">
-        <div class="bannercontainer">
-            <div class="banner">
-                <ul>
-                    <!-- THE FIRST SLIDE -->
-                    <li data-transition="boxfade" data-slotamount="20" class="active-revslide"
-                        style="width: 100%; height: 100%; overflow: hidden; z-index: 18; visibility: hidden; opacity: 0;">
-                        <div class="slotholder" style="width:100%;height:100%;" data-duration="undefined"
-                            data-zoomstart="undefined" data-zoomend="undefined" data-rotationstart="undefined"
-                            data-rotationend="undefined" data-ease="undefined" data-bgpositionend="undefined"
-                            data-bgposition="undefined" data-kenburns="undefined" data-easeme="undefined"
-                            data-bgfit="undefined" data-bgfitend="undefined" data-owidth="undefined"
-                            data-oheight="undefined">
-                            <div class="tp-bgimg defaultimg" data-lazyload="undefined" data-bgfit="cover"
-                                data-bgposition="center center" data-bgrepeat="no-repeat" data-lazydone="undefined"
-                                src="source/assets/dest/image/product/1.jpg"
-                                data-src="source/assets/dest/image/product/1.jpg"
-                                style="background-color: rgba(0, 0, 0, 0); background-repeat: no-repeat; background-image: url('source/assets/dest/image/product/1.jpg'); background-size: cover; background-position: center center; width: 100%; height: 100%; opacity: 1; visibility: inherit;">
-                            </div>
-                        </div>
+@section('content')
 
-                    </li>
-                    <li data-transition="boxfade" data-slotamount="20" class="active-revslide"
-                        style="width: 100%; height: 100%; overflow: hidden; z-index: 18; visibility: hidden; opacity: 0;">
-                        <div class="slotholder" style="width:100%;height:100%;" data-duration="undefined"
-                            data-zoomstart="undefined" data-zoomend="undefined" data-rotationstart="undefined"
-                            data-rotationend="undefined" data-ease="undefined" data-bgpositionend="undefined"
-                            data-bgposition="undefined" data-kenburns="undefined" data-easeme="undefined"
-                            data-bgfit="undefined" data-bgfitend="undefined" data-owidth="undefined"
-                            data-oheight="undefined">
-                            <div class="tp-bgimg defaultimg" data-lazyload="undefined" data-bgfit="cover"
-                                data-bgposition="center center" data-bgrepeat="no-repeat" data-lazydone="undefined"
-                                src="source/assets/dest/image/product/banh kem sinh nhat.jpg"
-                                data-src="source/assets/dest/image/product/banh kem sinh nhat.jpg"
-                                style="background-color: rgba(0, 0, 0, 0); background-repeat: no-repeat; background-image: url('source/assets/dest/image/product/banh kem sinh nhat.jpg); background-size: cover; background-position: center center; width: 100%; height: 100%; opacity: 1; visibility: inherit;">
-                            </div>
-                        </div>
+<!-- Slider -->
+<div class="rev-slider">
+    <div class="fullwidthbanner-container">
+        <div class="fullwidthbanner">
+            <div class="bannercontainer">
+                <div class="banner">
+                    <ul>
+                        @if(isset($slide) && count($slide) > 0)
+                        @foreach($slide as $sl)
+                            <li data-transition="boxfade" class="active-revslide">
+                                <div class="slotholder">
+                                    <div class="tp-bgimg defaultimg" 
+     style="background-image: url('{{ asset("image/slide/" . $sl->image) }}'); background-size: cover; background-position: center;">
+</div>
 
-                    <li data-transition="boxfade" data-slotamount="20" class="active-revslide"
-                        style="width: 100%; height: 100%; overflow: hidden; z-index: 18; visibility: hidden; opacity: 0;">
-                        <div class="slotholder" style="width:100%;height:100%;" data-duration="undefined"
-                            data-zoomstart="undefined" data-zoomend="undefined" data-rotationstart="undefined"
-                            data-rotationend="undefined" data-ease="undefined" data-bgpositionend="undefined"
-                            data-bgposition="undefined" data-kenburns="undefined" data-easeme="undefined"
-                            data-bgfit="undefined" data-bgfitend="undefined" data-owidth="undefined"
-                            data-oheight="undefined">
-                            <div class="tp-bgimg defaultimg" data-lazyload="undefined" data-bgfit="cover"
-                                data-bgposition="center center" data-bgrepeat="no-repeat" data-lazydone="undefined"
-                                src="source/assets/dest/image/product/banhkem.jpg"
-                                data-src="source/assets/dest/image/product/banhkem.jpg"
-                                style="background-color: rgba(0, 0, 0, 0); background-repeat: no-repeat; background-image: url('source/assets/dest/image/product/banhkem.jpg'); background-size: cover; background-position: center center; width: 100%; height: 100%; opacity: 1; visibility: inherit;">
-                            </div>
-                        </div>
-
-                    </li>
-
-                    <li data-transition="boxfade" data-slotamount="20" class="active-revslide current-sr-slide-visible"
-                        style="width: 100%; height: 100%; overflow: hidden; visibility: inherit; opacity: 1; z-index: 20;">
-                        <div class="slotholder" style="width:100%;height:100%;" data-duration="undefined"
-                            data-zoomstart="undefined" data-zoomend="undefined" data-rotationstart="undefined"
-                            data-rotationend="undefined" data-ease="undefined" data-bgpositionend="undefined"
-                            data-bgposition="undefined" data-kenburns="undefined" data-easeme="undefined"
-                            data-bgfit="undefined" data-bgfitend="undefined" data-owidth="undefined"
-                            data-oheight="undefined">
-                            <div class="tp-bgimg defaultimg" data-lazyload="undefined" data-bgfit="cover"
-                                data-bgposition="center center" data-bgrepeat="no-repeat" data-lazydone="undefined"
-                                src="source/assets/dest/image/product/banh kem sinh nhat.jpg"
-                                data-src="source/assets/dest/image/product/banh kem sinh nhat.jpg"
-                                style="background-color: rgba(0, 0, 0, 0); background-repeat: no-repeat; background-image: url('source/assets/dest/image/product/banh kem sinh nhat.jpg'); background-size: cover; background-position: center center; width: 100%; height: 100%; opacity: 1; visibility: inherit;">
-                            </div>
-                        </div>
-
-                    </li>
-                </ul>
+                                    {{-- <img width="200" height="200" src="{{ asset('/image/slide/' . $sl->image) }}" alt="{{ $sl->name }}"> --}}
+                                </div>
+                                
+                            </li>
+                        @endforeach
+                    @else
+                        <p>Không có dữ liệu slide</p>
+                    @endif
+                    </ul>
+                </div>
             </div>
+            <div class="tp-bannertimer"></div>
         </div>
-
-        <div class="tp-bannertimer"></div>
     </div>
 </div>
+<!-- End Slider -->
 
-<!--slider-->
-</div>
 <div class="container">
     <div id="content" class="space-top-none">
         <div class="main-content">
             <div class="space60">&nbsp;</div>
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="beta-products-list">
-                        <h4>New Products</h4>
-                        <div class="beta-products-details">
-                            <p class="pull-left">438 styles found</p>
-                            <div class="clearfix"></div>
-                        </div>
 
-                        <div class="row">
-                            <div class="col-sm-3">
-                                <div class="single-item">
-                                    <div class="single-item-header">
-                                        <a href="chitiet_sanpham"><img src="/source/assets/dest/image/product/1.jpg"
-                                                alt=""></a>
-                                    </div>
-                                    <div class="single-item-body">
-                                        <p class="single-item-title">Sample Woman Top</p>
-                                        <p class="single-item-price">
-                                            <span>$34.55</span>
-                                        </p>
-                                    </div>
-                                    <div class="single-item-caption">
-                                        <a class="add-to-cart pull-left" href="shopping_cart.html"><i
-                                                class="fa fa-shopping-cart"></i></a>
-                                        <a class="beta-btn primary" href="/chitiet_sanpham">Details <i
-                                                class="fa fa-chevron-right"></i></a>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <div class="single-item">
-                                    <div class="ribbon-wrapper">
-                                        <div class="ribbon sale">Sale</div>
-                                    </div>
+            @foreach([['Sản phẩm mới', $new_product], ['Sản phẩm khuyến mãi', $promotion_product]] as [$title, $products])
+                <div class="beta-products-list">
+                    <h4>{{ $title }}</h4>
+                    <p class="pull-left">{{ count($products) }} sản phẩm được tìm thấy</p>
+                    <div class="clearfix"></div>
 
-                                    <div class="single-item-header">
-                                        <a href="chitiet_sanpham"><img src="source/assets/dest/image/product/111.jpg"
-                                                alt=""></a>
-                                    </div>
-                                    <div class="single-item-body">
-                                        <p class="single-item-title">Sample Woman Top</p>
-                                        <p class="single-item-price">
-                                            <span class="flash-del">$34.55</span>
-                                            <span class="flash-sale">$33.55</span>
-                                        </p>
-                                    </div>
-                                    <div class="single-item-caption">
-                                        <a class="add-to-cart pull-left" href="shopping_cart.html"><i
-                                                class="fa fa-shopping-cart"></i></a>
-                                        <a class="beta-btn primary" href="/chitiet_sanpham">Details <i
-                                                class="fa fa-chevron-right"></i></a>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="row">
+                        @foreach($products as $product)
                             <div class="col-sm-3">
                                 <div class="single-item">
                                     <div class="single-item-header">
-                                        <a href="chitiet_sanpham"><img src="source/assets/dest/image/product/234.jpg"
-                                                alt=""></a>
-                                    </div>
-                                    <div class="single-item-body">
-                                        <p class="single-item-title">Sample Woman Top</p>
-                                        <p class="single-item-price">
-                                            <span>$34.55</span>
-                                        </p>
-                                    </div>
-                                    <div class="single-item-caption">
-                                        <a class="add-to-cart pull-left" href="shopping_cart.html"><i
-                                                class="fa fa-shopping-cart"></i></a>
-                                        <a class="beta-btn primary" href="/chitiet_sanpham">Details <i
-                                                class="fa fa-chevron-right"></i></a>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <div class="single-item">
-                                    <div class="single-item-header">
-                                        <a href="chitiet_sanpham"><img src="source/assets/dest/image/product/544bc48782741.png"
-                                                alt=""></a>
-                                    </div>
-                                    <div class="single-item-body">
-                                        <p class="single-item-title">Sample Woman Top</p>
-                                        <p class="single-item-price">
-                                            <span>$34.55</span>
-                                        </p>
-                                    </div>
-                                    <div class="single-item-caption">
-                                        <a class="add-to-cart pull-left" href="shopping_cart.html"><i
-                                                class="fa fa-shopping-cart"></i></a>
-                                        <a class="beta-btn primary" href="/chitiet_sanpham">Details <i
-                                                class="fa fa-chevron-right"></i></a>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> <!-- .beta-products-list -->
+                                        <a href="{{ url('detail/' . $product->id) }}">
+                                            <img width="200" height="200" src="{{ asset('/image/product/' . $product->image) }}" alt="{{ $product->name }}">
 
-                    <div class="space50">&nbsp;</div>
+                                        </a>
+                                    </div>
+                                    @if($product->promotion_price != 0)
+                                        <div class="ribbon-wrapper">
+                                            <div class="ribbon sale">Sale</div>
+                                        </div>
+                                    @endif
+                                    <div class="single-item-body">
+                                        <p class="single-item-title">{{ $product->name }}</p>
+                                        <p class="single-item-price">
+                                            @if($product->promotion_price == 0)
+                                                <span class="flash-sale">{{ number_format($product->unit_price) }} Đồng</span>
+                                            @else
+                                                <span class="flash-del">{{ number_format($product->unit_price) }} Đồng</span>
+                                                <span class="flash-sale">{{ number_format($product->promotion_price) }} Đồng</span>
+                                            @endif
+                                        </p>
+                                    </div>
+                                    <div class="single-item-caption">
+                                        <a class="add-to-cart pull-left" href="{{ route('themgiohang', $product->id) }}">
+                                            <i class="fa fa-shopping-cart"></i>
+                                        </a>
+                                        <a class="add-to-wishlist" href="{{ url('wishlist/add/' . $product->id) }}">
+                                            <i class="fa fa-heart"></i>
+                                        </a>
+                                        <a class="beta-btn primary" href="{{ url('detail/' . $product->id) }}">
+                                            Details <i class="fa fa-chevron-right"></i>
+                                        </a>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
 
-                    <div class="beta-products-list">
-                        <h4>Top Products</h4>
-                        <div class="beta-products-details">
-                            <p class="pull-left">438 styles found</p>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-3">
-                                <div class="single-item">
-                                    <div class="single-item-header">
-                                        <a href="chitiet_sanpham"><img src="source/assets/dest/image/product/1234.jpg"
-                                                alt=""></a>
-                                    </div>
-                                    <div class="single-item-body">
-                                        <p class="single-item-title">Sample Woman Top</p>
-                                        <p class="single-item-price">
-                                            <span>$34.55</span>
-                                        </p>
-                                    </div>
-                                    <div class="single-item-caption">
-                                        <a class="add-to-cart pull-left" href="shopping_cart.html"><i
-                                                class="fa fa-shopping-cart"></i></a>
-                                        <a class="beta-btn primary" href="/chitiet_sanpham">Details <i
-                                                class="fa fa-chevron-right"></i></a>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <div class="single-item">
-                                    <div class="ribbon-wrapper">
-                                        <div class="ribbon sale">Sale</div>
-                                    </div>
-
-                                    <div class="single-item-header">
-                                        <a href="chitiet_sanpham"><img src="source/assets/dest/image/product/40819_food_pizza.jpg"
-                                                alt=""></a>
-                                    </div>
-                                    <div class="single-item-body">
-                                        <p class="single-item-title">Sample Woman Top</p>
-                                        <p class="single-item-price">
-                                            <span class="flash-del">$34.55</span>
-                                            <span class="flash-sale">$33.55</span>
-                                        </p>
-                                    </div>
-                                    <div class="single-item-caption">
-                                        <a class="add-to-cart pull-left" href="shopping_cart.html"><i
-                                                class="fa fa-shopping-cart"></i></a>
-                                        <a class="beta-btn primary" href="/chitiet_sanpham">Details <i
-                                                class="fa fa-chevron-right"></i></a>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <div class="single-item">
-                                    <div class="single-item-header">
-                                        <a href="chitiet_sanpham"><img src="source/assets/dest/image/product/210215-banh-sinh-nhat-rau-cau-body- (6).jpg"
-                                                alt=""></a>
-                                    </div>
-                                    <div class="single-item-body">
-                                        <p class="single-item-title">Sample Woman Top</p>
-                                        <p class="single-item-price">
-                                            <span>$34.55</span>
-                                        </p>
-                                    </div>
-                                    <div class="single-item-caption">
-                                        <a class="add-to-cart pull-left" href="shopping_cart.html"><i
-                                                class="fa fa-shopping-cart"></i></a>
-                                        <a class="beta-btn primary" href="/chitiet_sanpham">Details <i
-                                                class="fa fa-chevron-right"></i></a>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <div class="single-item">
-                                    <div class="single-item-header">
-                                        <a href="chitiet_sanpham"><img src="source/assets/dest/image/product/2092140_17031512040051555216.jpg"
-                                                alt=""></a>
-                                    </div>
-                                    <div class="single-item-body">
-                                        <p class="single-item-title">Sample Woman Top</p>
-                                        <p class="single-item-price">
-                                            <span>$34.55</span>
-                                        </p>
-                                    </div>
-                                    <div class="single-item-caption">
-                                        <a class="add-to-cart pull-left" href="shopping_cart.html"><i
-                                                class="fa fa-shopping-cart"></i></a>
-                                        <a class="beta-btn primary" href="/chitiet_sanpham">Details <i
-                                                class="fa fa-chevron-right"></i></a>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="space40">&nbsp;</div>
-                        <div class="row">
-                            <div class="col-sm-3">
-                                <div class="single-item">
-                                    <div class="single-item-header">
-                                        <a href="chitiet_sanpham"><img src="source/assets/dest/image/product/50020041-combo-20-banh-su-que-pho-mai-9.jpg"
-                                                alt=""></a>
-                                    </div>
-                                    <div class="single-item-body">
-                                        <p class="single-item-title">Sample Woman Top</p>
-                                        <p class="single-item-price">
-                                            <span>$34.55</span>
-                                        </p>
-                                    </div>
-                                    <div class="single-item-caption">
-                                        <a class="add-to-cart pull-left" href="shopping_cart.html"><i
-                                                class="fa fa-shopping-cart"></i></a>
-                                        <a class="beta-btn primary" href="/chitiet_sanpham">Details <i
-                                                class="fa fa-chevron-right"></i></a>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <div class="single-item">
-                                    <div class="ribbon-wrapper">
-                                        <div class="ribbon sale">Sale</div>
-                                    </div>
-
-                                    <div class="single-item-header">
-                                        <a href="chitiet_sanpham"><img src="source/assets/dest/image/product/1430967449-pancake-sau-rieng-6.jpg"
-                                                alt=""></a>
-                                    </div>
-                                    <div class="single-item-body">
-                                        <p class="single-item-title">Sample Woman Top</p>
-                                        <p class="single-item-price">
-                                            <span class="flash-del">$34.55</span>
-                                            <span class="flash-sale">$33.55</span>
-                                        </p>
-                                    </div>
-                                    <div class="single-item-caption">
-                                        <a class="add-to-cart pull-left" href="shopping_cart.html"><i
-                                                class="fa fa-shopping-cart"></i></a>
-                                        <a class="beta-btn primary" href="/chitiet_sanpham">Details <i
-                                                class="fa fa-chevron-right"></i></a>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <div class="single-item">
-                                    <div class="single-item-header">
-                                        <a href="chitiet_sanpham"><img src="source/assets/dest/image/product/1434429117-banh-su-kem-chien-20.jpg"
-                                                alt=""></a>
-                                    </div>
-                                    <div class="single-item-body">
-                                        <p class="single-item-title">Sample Woman Top</p>
-                                        <p class="single-item-price">
-                                            <span>$34.55</span>
-                                        </p>
-                                    </div>
-                                    <div class="single-item-caption">
-                                        <a class="add-to-cart pull-left" href="shopping_cart.html"><i
-                                                class="fa fa-shopping-cart"></i></a>
-                                        <a class="beta-btn primary" href="/chitiet_sanpham">Details <i
-                                                class="fa fa-chevron-right"></i></a>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <div class="single-item">
-                                    <div class="single-item-header">
-                                        <a href="chitiet_sanpham"><img src="source/assets/dest/image/product/20131108144733.jpg"
-                                                alt=""></a>
-                                    </div>
-                                    <div class="single-item-body">
-                                        <p class="single-item-title">Sample Woman Top</p>
-                                        <p class="single-item-price">
-                                            <span>$34.55</span>
-                                        </p>
-                                    </div>
-                                    <div class="single-item-caption">
-                                        <a class="add-to-cart pull-left" href="shopping_cart.html"><i
-                                                class="fa fa-shopping-cart"></i></a>
-                                        <a class="beta-btn primary" href="/chitiet_sanpham">Details <i
-                                                class="fa fa-chevron-right"></i></a>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> <!-- .beta-products-list -->
+                    <div class="row">{{ $products->links("pagination::bootstrap-4") }}</div>
                 </div>
-            </div> <!-- end section with sidebar and main content -->
-
-
-        </div> <!-- .main-content -->
-    </div> <!-- #content -->
-</div> <!-- .container -->
+                <div class="space50">&nbsp;</div>
+            @endforeach
+        </div>
+    </div>
+</div>
 
 @endsection
