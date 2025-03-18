@@ -7,7 +7,7 @@
 			</div>
 			<div class="pull-right">
 				<div class="beta-breadcrumb font-large">
-					<a href="index.html">Home</a> / <span>Sản phẩm</span>
+					<a href="/">Home</a> / <span>Sản phẩm</span>
 				</div>
 			</div>
 			<div class="clearfix"></div>
@@ -22,7 +22,7 @@
 					<div class="col-sm-3">
 						<ul class="aside-menu">
 							@foreach($type_product as $l)
-								<li><a href="/type/{{$l->id}}">{{$l->name}}</a></li>
+								<li><a href="/loai-san-pham/{{$l->id}}">{{$l->name}}</a></li>
 							@endforeach
 						</ul>
 					</div>
@@ -46,8 +46,8 @@
 									<div class="col-sm-4">
 										<div class="single-item">
 											<div class="single-item-header">
-												<a href="">
-													<img width="200" height="200" src="image/product/{{$sp->image}}" alt="">
+												<a href="detail/{{$sp->id}}">
+													<img width="200" height="200" src="source/image/product/{{$sp->image}}" alt="">
 												</a>
 											</div>
 											<div class="single-item-body">
@@ -96,7 +96,7 @@
 										<div class="single-item">
 											<div class="single-item-header">
 												<a href="">
-													<img width="200" height="200" src="image/product/{{$khac->image}}" alt="">
+													<img width="200" height="200" src="source/image/product/{{$khac->image}}" alt="">
 												</a>
 											</div>
 											@if($khac->promotion_price != 0)

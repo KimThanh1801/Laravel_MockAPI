@@ -91,7 +91,7 @@
 				<nav class="main-menu">
 					<ul class="l-inline ov">
 						<li><a href="/index">Trang chủ</a></li>
-						<li><a href="/loai-san-pham/{type}">Sản phẩm</a>
+						<li><a href="/loai-san-pham/1">Sản phẩm</a>
 							<ul class="sub-menu">
 								@foreach ($loai_sp as $loai )
 								<li><a href="/loai-san-pham/{{$loai ->id}}">{{$loai ->name}}</a></li>
