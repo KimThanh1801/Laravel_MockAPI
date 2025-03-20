@@ -10,7 +10,7 @@
 				<div class="pull-right auto-width-right">
 					<ul class="top-details menu-beta l-inline">
 						<li><a href="#"><i class="fa fa-user"></i>Tài khoản</a></li>
-						<li><a href="/singup">Đăng kí</a></li>
+						<li><a href="/register">Đăng kí</a></li>
 						<li><a href="/login">Đăng nhập</a></li>
 					</ul>
 				</div>
@@ -20,15 +20,20 @@
 		<div class="header-body">
 			<div class="container beta-relative">
 				<div class="pull-left">
-					<a href="/chitiet_sanpham" id="logo"><img src="source/assets/dest/images/logo-cake.png" width="200px" alt=""></a>
+					<a href="/index" id="logo"><img src="source/assets/dest/images/logo-cake.png" width="200px" alt=""></a>
 				</div>
 				<div class="pull-right beta-components space-left ov">
 					<div class="space10">&nbsp;</div>
 					<div class="beta-comp">
-						<form role="search" method="get" id="searchform" action="/">
-					        <input type="text" value="" name="s" id="s" placeholder="Nhập từ khóa..." />
-					        <button class="fa fa-search" type="submit" id="searchsubmit"></button>
+						<form role="search" method="POST" id="searchform" action="{{ route('search') }}" class="d-flex">
+							@csrf
+							<input type="text" name="search" id="s" class="form-control me-2" placeholder="Nhập từ khóa tìm kiếm..." required>
+							<button class="btn btn-primary" type="submit">
+								<i class="fa fa-search"></i>
+							</button>
 						</form>
+						
+						
 					</div>
 
 					<div class="beta-comp">

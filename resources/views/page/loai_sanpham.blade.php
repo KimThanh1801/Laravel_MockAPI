@@ -7,12 +7,14 @@
 			</div>
 			<div class="pull-right">
 				<div class="beta-breadcrumb font-large">
-					<a href="/">Home</a> / <span>Sản phẩm</span>
+					<a href="/index">Home</a> / <span>Sản phẩm</span>
 				</div>
 			</div>
 			<div class="clearfix"></div>
 		</div>
 	</div>
+	<div class="container d-flex flex-wrap gap-5 justify-content-between">
+
 
 	<div class="container">
 		<div id="content" class="space-top-none">

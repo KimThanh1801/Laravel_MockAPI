@@ -8,18 +8,19 @@ use App\Models\Product;
 use App\Models\Slide;
 use App\Models\TypeProduct;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PageController extends Controller
 {
     public function index()
     {
         $slide = Slide::all();
-        $new_product = Product::where('new', 1)->paginate(8);
-        $promotion_product = Product::where('promotion_price', '>', 0)->paginate(8);
+        $new_product = Product::where('new', 1)->paginate(8); //-> new 
+        $promotion_product = Product::where('promotion_price', '>', 0)->paginate(8);  
 
         return view('page.trangchu', compact('slide', 'new_product', 'promotion_product'));
     }
-
+/////////////////////////
     public function getLienheSp()
     {
         return view('page.lienhe_sanpham');
@@ -28,6 +29,12 @@ class PageController extends Controller
     {
         return view('page.themgiohang');
     }
+    
+    public function about()
+    {
+        return view('page.about');
+    }
+//////////////////////////////////
     public function getLoaiSp($type)
     {
         $sp_theoloai = Product::where('id_type', $type)->get();
@@ -42,10 +49,6 @@ class PageController extends Controller
         return view('page.chitiet_sanpham', compact('product_detail'));
     }
 
-    public function about()
-    {
-        return view('page.about');
-    }
 
     public function getDetail(Request $request)
     {
@@ -146,15 +149,46 @@ class PageController extends Controller
     }
 
     public function showAddProductForm() {
-        return view('pageAdmin.formAdd'); // Đảm bảo file view này tồn tại
+        return view('pageAdmin.formAdd');
     }
     
-//     public function bestProduct()
-// {
-//     $bestSellers = Product::where('is_best_seller', 1)->take(4)->get(); 
 
-//     return view('chitiet_sanpham', compact('bestSellers'));
-// }
+    // Tìm kiếm sản phẩm
+    public function postSearch(Request $request)
+    {
+        $keyword = $request->input('search');
+        $products = Product::where('name', 'LIKE', "%$keyword%")->get();
+
+        return view('page.search', compact('products'));
+    }
+
+// Comment
+public function postComment(Request $request, $id)
+{
+    $request->validate([
+        'comment' => 'required|string'
+    ]);
+
+    $comment = new Comment();
+    
+    // Nếu user đã đăng nhập, lấy tên từ Auth::user()->name
+    // Nếu chưa đăng nhập, gán 'Guest'
+    if (Auth::check()) {
+        $comment->username = Auth::user()->name;
+    } else {
+        $comment->username = 'Guest';
+    }
+
+    $comment->comment = $request->input('comment');
+    $comment->id_product = $id;
+    $comment->save();
+
+    // Chuyển hướng về trang chi tiết sản phẩm
+    return redirect()->route('chitiet_sanpham', ['id' => $id])
+                     ->with('success', 'Bình luận thành công!');
+}
+
+ 
 }
 
 

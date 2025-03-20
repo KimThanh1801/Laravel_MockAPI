@@ -7,7 +7,7 @@
         </div>
         <div class="pull-right">
             <div class="beta-breadcrumb font-large">
-                <a href="">Home</a> / <span>Contacts</span>
+                <a href="/index">Home</a> / <span>Contacts</span>
             </div>
         </div>
         <div class="clearfix"></div>

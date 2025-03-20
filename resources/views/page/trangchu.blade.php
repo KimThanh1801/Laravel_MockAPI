@@ -52,9 +52,6 @@
                                 <div class="col-sm-3">
                                     <div class="single-item">
                                         <div class="single-item-header">
-                                            {{-- <a href="{{ url('detail/' . $new->id) }}">
-                                                <img src="{{ asset('image/product/' . $new->image) }}" alt="">
-                                            </a> --}}
                                             
                                             <a href="{{ url('detail/' . $product->id) }}">
                                                 <img width="200" height="200" src="{{ asset('source/image/product/' . $product->image) }}"

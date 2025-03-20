@@ -9,7 +9,7 @@
     </div>
     <div class="pull-right">
       <div class="beta-breadcrumb font-large">
-        <a href="/trangchu">Home</a> / <span>Details</span>
+        <a href="/index">Home</a> / <span>Details</span>
       </div>
     </div>
     <div class="clearfix"></div>
@@ -84,34 +84,47 @@
               pariatur? </p>
           </div>
           <div class="panel" id="tab-comment">
-
+            <!-- FORM THÊM BÌNH LUẬN -->
             <div class="container">
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="card-body">
-                    <form method="post" action="/comment/{{$sanpham->id}}">
-                      @csrf
-                      <div class="form-group">
-                        <textarea class="form-control" name="comment" required></textarea>
-                      </div>
-                      <button type="submit" class="beta-btn primary">Bình luận</button>
-                    </form>
-                  </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card-body">
+                          <form method="post" action="/comment/{{ $sanpham->id }}">
+                            @csrf
+                            <textarea name="comment" required></textarea>
+                            <button type="submit">Bình luận</button>
+                        </form>
+                        
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-
-            @if(isset($comments))
-            @foreach($comments as $comment)
-            <p class="border-bottom">
-            <p><b class="pull-left">{{$comment->username}}</b></p><br />
-            <p>{{$comment->comment}}</p>
-            </p>
-            @endforeach
-            @else
-            <p>Chưa có bình luận nào cả!</p>
-            @endif
-          </div>
+        
+            <hr>
+        
+            <!-- DANH SÁCH BÌNH LUẬN -->
+            
+            <div class="container mt-3">
+                <h5><strong>Danh sách bình luận</strong></h5>
+                @if(isset($comments) && count($comments) > 0)
+                    @foreach($comments as $comment)
+                        <div class="border-bottom mb-3 p-2">
+                            <strong>{{ $comment->username }}</strong>
+                            <p class="mb-1">{{ $comment->comment }}</p>
+                            
+                            @if($comment->created_at)
+                                <small class="text-muted">
+                                    {{ $comment->created_at->format('d/m/Y H:i') }}
+                                </small>
+                            @endif
+                        </div>
+                    @endforeach
+                @else
+                    <p>Chưa có bình luận nào!</p>
+                @endif
+            </div>
+        </div>
+        
 
         </div>
         <div class="space50">&nbsp;</div>
