@@ -1,230 +1,233 @@
 @extends('index')
 @section('content')
 
+</html>
 <div class="inner-header">
-    <div class="container">
-        <div class="pull-left">
-            <h6 class="inner-title">Product</h6>
-        </div>
-        <div class="pull-right">
-            <div class="beta-breadcrumb font-large">
-                <a href="index.html">Home</a> / <span>Product</span>
-            </div>
-        </div>
-        <div class="clearfix"></div>
+  <div class="container">
+    <div class="pull-left">
+      <h6 class="inner-title">San Pham {{$sanpham->name}}</h6>
     </div>
+    <div class="pull-right">
+      <div class="beta-breadcrumb font-large">
+        <a href="/index">Home</a> / <span>Details</span>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+  </div>
 </div>
 
 <div class="container">
-    <div id="content">
+  <div id="content">
+    <div class="row">
+      <div class="col-sm-9">
+
         <div class="row">
-            <div class="col-sm-9">
-
-                <div class="row">
-                    <div class="col-sm-4">
-                        <img src="source/assets/dest/image/product/1.jpg" alt="">
-                    </div>
-                    <div class="col-sm-8">
-                        <div class="single-item-body">
-                            <p class="single-item-title">Sample Woman Top</p>
-                            <p class="single-item-price">
-                                <span>$34.55</span>
-                            </p>
-                        </div>
-
-                        <div class="clearfix"></div>
-                        <div class="space20">&nbsp;</div>
-
-                        <div class="single-item-desc">
-                            <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo ms id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe.</p>
-                        </div>
-                        <div class="space20">&nbsp;</div>
-
-                        <p>Options:</p>
-                        <div class="single-item-options">
-                            <select class="wc-select" name="size">
-                                <option>Size</option>
-                                <option value="XS">XS</option>
-                                <option value="S">S</option>
-                                <option value="M">M</option>
-                                <option value="L">L</option>
-                                <option value="XL">XL</option>
-                            </select>
-                            <select class="wc-select" name="color">
-                                <option>Color</option>
-                                <option value="Red">Red</option>
-                                <option value="Green">Green</option>
-                                <option value="Yellow">Yellow</option>
-                                <option value="Black">Black</option>
-                                <option value="White">White</option>
-                            </select>
-                            <select class="wc-select" name="color">
-                                <option>Qty</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                            </select>
-                            <a class="add-to-cart" href="#"><i class="fa fa-shopping-cart"></i></a>
-                            <div class="clearfix"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="space40">&nbsp;</div>
-                <div class="woocommerce-tabs">
-                    <ul class="tabs">
-                        <li><a href="#tab-description">Description</a></li>
-                        <li><a href="#tab-reviews">Reviews (0)</a></li>
-                    </ul>
-
-                    <div class="panel" id="tab-description">
-                        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.</p>
-                        <p>Consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequaturuis autem vel eum iure reprehenderit qui in ea voluptate velit es quam nihil molestiae consequr, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur? </p>
-                    </div>
-                    <div class="panel" id="tab-reviews">
-                        <p>No Reviews</p>
-                    </div>
-                </div>
-                <div class="space50">&nbsp;</div>
-                <div class="beta-products-list">
-                    <h4>Related Products</h4>
-
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <div class="single-item">
-                                <div class="single-item-header">
-                                    <a href="/chitiet_sanpham"><img src="source/assets/dest/image/product/111.jpg" alt=""></a>
-                                </div>
-                                <div class="single-item-body">
-                                    <p class="single-item-title">Sample Woman Top</p>
-                                    <p class="single-item-price">
-                                        <span>$34.55</span>
-                                    </p>
-                                </div>
-                                <div class="single-item-caption">
-                                    <a class="add-to-cart pull-left" href="/chitiet_sanpham"><i class="fa fa-shopping-cart"></i></a>
-                                    <a class="beta-btn primary" href="/chitiet_sanpham">Details <i class="fa fa-chevron-right"></i></a>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="single-item">
-                                <div class="single-item-header">
-                                    <a href="/chitiet_sanpham"><img src="source/assets/dest/image/product/234.jpg" alt=""></a>
-                                </div>
-                                <div class="single-item-body">
-                                    <p class="single-item-title">Sample Woman Top</p>
-                                    <p class="single-item-price">
-                                        <span>$34.55</span>
-                                    </p>
-                                </div>
-                                <div class="single-item-caption">
-                                    <a class="add-to-cart pull-left" href="/chitiet_sanpham"><i class="fa fa-shopping-cart"></i></a>
-                                    <a class="beta-btn primary" href="/chitiet_sanpham">Details <i class="fa fa-chevron-right"></i></a>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="single-item">
-                                <div class="ribbon-wrapper"><div class="ribbon sale">Sale</div></div>
-
-                                <div class="single-item-header">
-                                    <a href="#"><img src="source/assets/dest/image/product/544bc48782741.png" alt=""></a>
-                                </div>
-                                <div class="single-item-body">
-                                    <p class="single-item-title">Sample Woman Top</p>
-                                    <p class="single-item-price">
-                                        <span class="flash-del">$34.55</span>
-                                        <span class="flash-sale">$33.55</span>
-                                    </p>
-                                </div>
-                                <div class="single-item-caption">
-                                    <a class="add-to-cart pull-left" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                    <a class="beta-btn primary" href="#">Details <i class="fa fa-chevron-right"></i></a>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> <!-- .beta-products-list -->
+          <div class="col-sm-4">
+            <img src="source/image/product/{{$sanpham->image}}" alt="">
+          </div>
+          <div class="col-sm-8">
+            <div class="single-item-body">
+              <p class="single-item-title">
+              <h2>{{$sanpham->name}}</h2>
+              </p>
+              <p class="single-item-price" style="text-align:left;font-size: 15px;">
+                <span> @if($sanpham->promotion_price==0)
+                  <span class="flash-sale">{{number_format($sanpham->unit_price)}} Đồng</span>
+                  @else
+                  <span class="flash-del">{{number_format($sanpham->unit_price)}} Đồng </span>
+                  <span class="flash-sale">{{number_format($sanpham->promotion_price)}} Đồng</span>
+                  @endif</span>
+              </p>
             </div>
-            <div class="col-sm-3 aside">
-                <div class="widget">
-                    <h3 class="widget-title">Best Sellers</h3>
-                    <div class="widget-body">
-                        <div class="beta-sales beta-lists">
-                            <div class="media beta-sales-item">
-                                <a class="pull-left" href="/chitiet_sanpham"><img src="source/assets/dest/image/product/1234.jpg" alt=""></a>
-                                <div class="media-body">
-                                    Sample Woman Top
-                                    <span class="beta-sales-price">$34.55</span>
-                                </div>
-                            </div>
-                            <div class="media beta-sales-item">
-                                <a class="pull-left" href="/chitiet_sanpham"><img src="source/assets/dest/image/product/1ales/2.png" alt=""></a>
-                                <div class="media-body">
-                                    Sample Woman Top
-                                    <span class="beta-sales-price">$34.55</span>
-                                </div>
-                            </div>
-                            <div class="media beta-sales-item">
-                                <a class="pull-left" href="/chitiet_sanpham"><img src="source/assets/dest/image/product/40819_food_pizza.jpg" alt=""></a>
-                                <div class="media-body">
-                                    Sample Woman Top
-                                    <span class="beta-sales-price">$34.55</span>
-                                </div>
-                            </div>
-                            <div class="media beta-sales-item">
-                                <a class="pull-left" href="/chitiet_sanpham"><img src="source/assets/dest/image/product/40819_food_pizza.jpg" alt=""></a>
-                                <div class="media-body">
-                                    Sample Woman Top
-                                    <span class="beta-sales-price">$34.55</span>
-                                </div>
-                            </div>
+
+            <div class="clearfix"></div>
+            <div class="space20">&nbsp;</div>
+
+            <div class="single-item-desc">
+              <p>{{$sanpham->description}}</p>
+            </div>
+            <div class="space20">&nbsp;</div>
+
+            <p>So luong:</p>
+            <div class="single-item-options">
+
+              <select class="wc-select" name="color">
+                <option>So luong</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+              <a class="add-to-cart" href="{{route('themgiohang',$sanpham->id)}}"><i
+                  class="fa fa-shopping-cart"></i></a>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="space40">&nbsp;</div>
+        <div class="woocommerce-tabs">
+          <ul class="tabs">
+            <li><a href="#tab-description">Description</a></li>
+            <li><a href="#tab-comment">Comments</a></li>
+          </ul>
+
+          <div class="panel" id="tab-description">
+            <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni
+              dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor
+              sit amet.</p>
+            <p>Consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam
+              aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit
+              laboriosam, nisi ut aliquid ex ea commodi consequaturuis autem vel eum iure reprehenderit qui in ea
+              voluptate velit es quam nihil molestiae consequr, vel illum qui dolorem eum fugiat quo voluptas nulla
+              pariatur? </p>
+          </div>
+          <div class="panel" id="tab-comment">
+            <!-- FORM THÊM BÌNH LUẬN -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card-body">
+                          <form method="post" action="/comment/{{ $sanpham->id }}">
+                            @csrf
+                            <textarea name="comment" required></textarea>
+                            <button type="submit">Bình luận</button>
+                        </form>
+                        
                         </div>
                     </div>
-                </div> <!-- best sellers widget -->
-                <div class="widget">
-                    <h3 class="widget-title">New Products</h3>
-                    <div class="widget-body">
-                        <div class="beta-sales beta-lists">
-                            <div class="media beta-sales-item">
-                                <a class="pull-left" href="/chitiet_sanpham"><img src="assets/dest/image/product/210215-banh-sinh-nhat-rau-cau-body- (6).jpg" alt=""></a>
-                                <div class="media-body">
-                                    Sample Woman Top
-                                    <span class="beta-sales-price">$34.55</span>
-                                </div>
-                            </div>
-                            <div class="media beta-sales-item">
-                                <a class="pull-left" href="/chitiet_sanpham"><img src="source/assets/dest/image/product/2092140_17031512040051555216.jpg" alt=""></a>
-                                <div class="media-body">
-                                    Sample Woman Top
-                                    <span class="beta-sales-price">$34.55</span>
-                                </div>
-                            </div>
-                            <div class="media beta-sales-item">
-                                <a class="pull-left" href="/chitiet_sanpham"><img src="source/assets/dest/image/product/50020041-combo-20-banh-su-que-pho-mai-9.jpg" alt=""></a>
-                                <div class="media-body">
-                                    Sample Woman Top
-                                    <span class="beta-sales-price">$34.55</span>
-                                </div>
-                            </div>
-                            <div class="media beta-sales-item">
-                                <a class="pull-left" href="/chitiet_sanpham"><img src="source/assets/dest/image/product/1430967449-pancake-sau-rieng-6.jpg" alt=""></a>
-                                <div class="media-body">
-                                    Sample Woman Top
-                                    <span class="beta-sales-price">$34.55</span>
-                                </div>
-                            </div>
+                </div>
+            </div>
+        
+            <hr>
+        
+            <!-- DANH SÁCH BÌNH LUẬN -->
+            
+            <div class="container mt-3">
+                <h5><strong>Danh sách bình luận</strong></h5>
+                @if(isset($comments) && count($comments) > 0)
+                    @foreach($comments as $comment)
+                        <div class="border-bottom mb-3 p-2">
+                            <strong>{{ $comment->username }}</strong>
+                            <p class="mb-1">{{ $comment->comment }}</p>
+                            
+                            @if($comment->created_at)
+                                <small class="text-muted">
+                                    {{ $comment->created_at->format('d/m/Y H:i') }}
+                                </small>
+                            @endif
                         </div>
-                    </div>
-                </div> <!-- best sellers widget -->
+                    @endforeach
+                @else
+                    <p>Chưa có bình luận nào!</p>
+                @endif
             </div>
         </div>
-    </div> <!-- #content -->
+        
+
+        </div>
+        <div class="space50">&nbsp;</div>
+        <div class="beta-products-list">
+          <h4>Related Products</h4>
+
+          <div class="row">
+            @foreach($splienquan as $sp)
+            <div class="col-sm-4">
+              <div class="single-item">
+                <div class="single-item-header">
+                  <a href="detail/{{$sp->id}}"><img src="source/image/product/{{$sp->image}}" alt=""></a>
+                </div>
+                @if($sp->promotion_price==!0)
+                <div class="ribbon-wrapper">
+                  <div class="ribbon sale">Sale</div>
+                </div>
+                @endif
+                <div class="single-item-body">
+                  <p class="single-item-title">{{$sp->name}}</p>
+                  <p class="single-item-price" style="text-align:left;font-size: 15px;">
+                    @if($sp->promotion_price==0)
+                    <span class="flash-sale">{{number_format($sp->unit_price)}} Đồng</span>
+                    @else
+                    <span class="flash-sale">{{number_format($sp->promotion_price)}} Đồng</span>
+                    <span class="flash-del">{{number_format($sp->unit_price)}} Đồng </span>
+                    @endif
+                  </p>
+                </div>
+                <div class="single-item-caption">
+                  <a class="add-to-cart pull-left" href="{{route('themgiohang',$sp->id)}}"><i
+                      class="fa fa-shopping-cart"></i></a>
+                  <a class="beta-btn primary" href="detail/{{$sp->id}}">Details <i class="fa fa-chevron-right"></i></a>
+                  <div class="clearfix"></div>
+                </div>
+              </div>
+            </div>
+            @endforeach
+          </div>
+        </div> <!-- .beta-products-list -->
+      </div>
+      <div class="col-sm-3 aside">
+        <div class="widget">
+          <h3 class="widget-title">Best Sellers</h3>
+          <div class="widget-body">
+              <div class="beta-sales beta-lists">
+                  @foreach($bestSellers as $product)
+                  <div class="media beta-sales-item">
+                      <a class="pull-left" href="{{ url('detail/'.$product->id) }}">
+                          <img src="{{ asset('source/image/product/'.$product->image) }}" alt="{{ $product->name }}">
+                      </a>
+                      <div class="media-body">
+                          <strong>{{ $product->name }}</strong><br>
+                          @if($product->promotion_price > 0)
+                              <span class="beta-sales-price text-danger">
+                                  ${{ number_format($product->promotion_price, 2) }}
+                              </span>
+                              <del class="text-muted">${{ number_format($product->unit_price, 2) }}</del>
+                          @else
+                              <span class="beta-sales-price">
+                                  ${{ number_format($product->unit_price, 2) }}
+                              </span>
+                          @endif
+                      </div>
+                  </div>
+                  @endforeach
+              </div>
+          </div>
+      </div> <!-- Best Sellers widget -->
+      <!-- Best Sellers widget -->
+      </div>
+       <!-- best sellers widget -->
+        <div class="widget">
+          <h3 class="widget-title">New Products</h3>
+          <div class="widget-body">
+            <div class="beta-sales beta-lists">
+                @foreach($newproduct as $product)
+                <div class="media beta-sales-item">
+                    <a class="pull-left" href="{{ url('detail/'.$product->id) }}">
+                        <img src="{{ asset('source/image/product/'.$product->image) }}" alt="{{ $product->name }}">
+                    </a>
+                    <div class="media-body">
+                        <strong>{{ $product->name }}</strong><br>
+                        @if($product->promotion_price > 0)
+                            <span class="beta-sales-price text-danger">
+                                ${{ number_format($product->promotion_price, 2) }}
+                            </span>
+                            <del class="text-muted">${{ number_format($product->unit_price, 2) }}</del>
+                        @else
+                            <span class="beta-sales-price">
+                                ${{ number_format($product->unit_price, 2) }}
+                            </span>
+                        @endif
+                    </div>
+                </div>
+                @endforeach
+            </div>
+        </div>
+        
+        </div> <!-- best sellers widget -->
+      </div>
+    </div>
+  </div> <!-- #content -->
 </div> <!-- .container -->
+
 @endsection
